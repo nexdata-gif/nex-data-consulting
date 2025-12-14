@@ -40,7 +40,7 @@ const Footer = () => {
                         <h3 className="text-sm font-semibold text-gray-500 tracking-wider uppercase">Contact</h3>
                         <ul className="mt-4 space-y-4">
                             <li>
-                                <span className="text-base text-gray-600">contact@nexdataconsulting.com</span>
+                                <span className="text-base text-gray-600">info@nexdataconsulting.com</span>
                             </li>
                             <li>
                                 <span className="text-base text-gray-600">202-420-9364</span>

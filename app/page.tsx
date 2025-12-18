@@ -5,9 +5,7 @@ import {
   BarChart3,
   Server,
   Bot,
-  Terminal,
-  ArrowRight,
-  CheckCircle2
+  Terminal
 } from 'lucide-react';
 
 export default function Home() {

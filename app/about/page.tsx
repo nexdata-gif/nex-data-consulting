@@ -23,7 +23,7 @@ export default function About() {
                                 pragmatic, disciplined approach to every engagement.
                             </p>
                             <p className="mb-4">
-                                We don't bring armies of junior staff to learn on your dime. Instead, we provide senior,
+                                We don&apos;t bring armies of junior staff to learn on your dime. Instead, we provide senior,
                                 hands-on leadership needed to stabilize delivery, optimize processes, and drive real progress.
                             </p>
                             <p>

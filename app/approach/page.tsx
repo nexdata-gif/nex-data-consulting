@@ -80,7 +80,7 @@ export default function Approach() {
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl font-bold text-gray-900 mb-8">Why We Are Different</h2>
                     <p className="text-lg text-gray-600 leading-relaxed mb-10">
-                        We reject the "land and expand" model. Our focus is on delivering value quickly
+                        We reject the &quot;land and expand&quot; model. Our focus is on delivering value quickly
                         and empowering your internal teams to take ownership. We believe that true success
                         is defined by what happens after we leave.
                     </p>

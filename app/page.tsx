@@ -145,7 +145,7 @@ export default function Home() {
               }
             ].map((phase, index) => (
               <div key={index} className="relative">
-                <div className="text-5xl font-bold text-slate-800 mb-4 opacity-50">{phase.step}</div>
+                <div className="text-5xl font-bold text-slate-600 mb-4">{phase.step}</div>
                 <h3 className="text-2xl font-bold text-white mb-4 relative z-10">{phase.title}</h3>
                 <p className="text-slate-300 leading-relaxed relative z-10">{phase.description}</p>
               </div>

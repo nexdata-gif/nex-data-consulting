@@ -18,7 +18,7 @@ export default function InsightsAndEngagements() {
     type TabType = 'insights' | 'engagements';
     type IndustryType = 'all' | 'federal' | 'real-estate' | 'construction' | 'water';
 
-    const [activeTab, setActiveTab] = useState<TabType>('insights');
+    const [activeTab, setActiveTab] = useState<TabType>('engagements');
     const [activeIndustry, setActiveIndustry] = useState<IndustryType>('all');
 
     const industries = [

@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="bg-white pt-24 pb-32 overflow-hidden">
+      <section className="bg-white pt-16 pb-20 sm:pt-24 sm:pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl mb-8">
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl mb-8">
               Turning Strategy Into <span className="text-blue-600">Execution</span>
             </h1>
             <p className="mt-6 text-xl leading-8 text-gray-600 mb-10 max-w-2xl mx-auto">
@@ -38,7 +38,7 @@ export default function Home() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-24 bg-gray-50 border-y border-gray-100">
+      <section className="py-16 sm:py-24 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
@@ -62,7 +62,7 @@ export default function Home() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-white">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">What We Do</h2>
@@ -117,7 +117,7 @@ export default function Home() {
       </section>
 
       {/* How We Work */}
-      <section className="py-24 bg-slate-900 text-white">
+      <section className="py-16 sm:py-24 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">How We Work</h2>
@@ -155,7 +155,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-blue-600">
+      <section className="py-16 sm:py-24 bg-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
             Ready to Move Forward?

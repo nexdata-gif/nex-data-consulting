@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import {
     Lightbulb,
     Briefcase,
@@ -15,18 +16,35 @@ import {
 } from 'lucide-react';
 
 export default function InsightsAndEngagements() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center">Loading...</div>}>
+            <InsightsAndEngagementsContent />
+        </Suspense>
+    );
+}
+
+function InsightsAndEngagementsContent() {
     type TabType = 'insights' | 'engagements';
     type IndustryType = 'all' | 'federal' | 'real-estate' | 'construction' | 'water';
 
+    const searchParams = useSearchParams();
+    const queryIndustry = searchParams.get('industry') as IndustryType | null;
+
     const [activeTab, setActiveTab] = useState<TabType>('engagements');
     const [activeIndustry, setActiveIndustry] = useState<IndustryType>('all');
+
+    useEffect(() => {
+        if (queryIndustry && ['all', 'federal', 'real-estate', 'construction', 'water'].includes(queryIndustry)) {
+            setActiveIndustry(queryIndustry);
+        }
+    }, [queryIndustry]);
 
     const industries = [
         { id: 'all', label: 'All Industries' },
         { id: 'federal', label: 'Federal & Public Sector' },
         { id: 'real-estate', label: 'Real Estate & Development' },
         { id: 'construction', label: 'Construction' },
-        { id: 'water', label: 'Restoration' }
+        { id: 'water', label: 'Water Damage & Restoration' }
     ];
 
     const engagements = [
@@ -38,7 +56,8 @@ export default function InsightsAndEngagements() {
             details: [
                 'Supported modernization initiatives (Agile delivery, data platforms, IT infrastructure)',
                 'Served as Scrum Master and Agile Lead across multiple teams',
-                'Designed and administered Jira workflows and reporting',
+                'Designed and administered delivery platforms (Jira, Asana, ServiceNow, ClickUp), workflows, and reporting',
+                'Bridged delivery leadership with data center and infrastructure operations to ensure systems were production-ready, compliant, and supportable',
                 'Coordinated across engineering, analytics, and leadership groups',
                 'Standardized delivery practices at scale',
                 'Supported ITSM processes, change management, and compliance workflows'
@@ -50,11 +69,11 @@ export default function InsightsAndEngagements() {
             role: 'Hybrid Advisor & Embedded Operator',
             context: 'Operating as a hybrid advisor and embedded operator supporting ownership directly in fast-moving development activities.',
             details: [
-                'Implemented task management systems and defined workflows',
-                'Improved coordination across internal teams and external partners',
-                'Supported leadership with execution visibility and prioritization',
+                'Directly supported ownership and CEO with execution visibility',
+                'Implemented task management systems and defined operational workflows',
+                'Improved coordination across internal finance, vendors, and development timelines',
+                'Supported leadership with prioritization and execution enablement',
                 'Identified work for internal handling vs. outsourcing',
-                'Assisted with vendor coordination and documentation',
                 'Created artifacts to reduce reliance on informal communication'
             ]
         },
@@ -64,26 +83,26 @@ export default function InsightsAndEngagements() {
             role: 'Business Process & Coordination Support',
             context: 'Supporting the operational interface between real estate ownership and construction firms acting as primes or general contractors.',
             details: [
-                'Structured task tracking and communication flows',
+                'Structured task tracking and coordination flows between owners and field teams',
                 'Managed action items and documented dependencies',
+                'Organized business processes rather than construction execution',
                 'Created process diagrams and task frameworks',
                 'Improved communication between leadership and vendors',
-                'Reduced ambiguity and improved follow-through',
-                'Established repeatable operational practices'
+                'Reduced ambiguity and improved follow-through'
             ]
         },
         {
             industry: 'water',
-            title: 'Restoration',
+            title: 'Water Damage & Restoration',
             role: 'Business Management Support',
             context: 'Early-stage operational support focused on business management rather than technical restoration work.',
             details: [
-                'Assisted leadership with organizing workflows',
-                'Created foundational artifacts (process maps, task structures)',
-                'Identified and coordinated external resources (marketing)',
-                'Brought clarity to day-to-day operations',
-                'Helped move from reactive execution to structured operations',
-                'Avoided unnecessary complexity in a growing business'
+                'Assisted leadership with business process support and workflow organization',
+                'Created visualization artifacts (mind maps, organizational views)',
+                'Coordinated across external resources including marketing and vendors',
+                'Brought clarity to day-to-day operations and task structures',
+                'Focused on operational stability, explicitly avoiding technical field labor',
+                'Helped move from reactive execution to structured operations'
             ]
         }
     ];
@@ -199,9 +218,12 @@ export default function InsightsAndEngagements() {
                                     </div>
 
                                     <div className="flex justify-end">
-                                        <button className="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2 transition-colors">
+                                        <Link
+                                            href="#"
+                                            className="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2 transition-colors"
+                                        >
                                             Read Full Article <ArrowRight className="h-4 w-4" />
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </article>
@@ -247,8 +269,8 @@ export default function InsightsAndEngagements() {
                                                     {item.role}
                                                 </div>
                                             </div>
-                                            <p className="text-gray-600 text-sm leading-relaxed italic border-l-4 border-gray-200 pl-4 py-1">
-                                                "{item.context}"
+                                            <p className="text-gray-600 text-sm leading-relaxed">
+                                                {item.context}
                                             </p>
                                         </div>
                                         <div className="md:w-2/3 p-8">

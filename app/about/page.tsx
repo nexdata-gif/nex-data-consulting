@@ -6,8 +6,8 @@ export default function About() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">About NexData</h1>
                     <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        We are a delivery-focused consulting firm helping organizations execute complex initiatives with confidence.
-                        We combine experienced project leadership with modern analytics and AI capabilities to turn strategy into tangible results.
+                        NexData is a systems-first consulting firm built by practitioners. We provide the operational clarity
+                        and execution enablement needed to navigate complex, multi-stakeholder delivery environments.
                     </p>
                 </div>
             </div>

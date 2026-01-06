@@ -9,7 +9,11 @@ import {
     ArrowDown,
     ChevronRight,
     CheckCircle2,
-    AlertCircle
+    AlertCircle,
+    Landmark,
+    Building2,
+    HardHat,
+    Droplets
 } from 'lucide-react';
 
 export default function ServicesAndCapabilities() {
@@ -311,6 +315,75 @@ export default function ServicesAndCapabilities() {
                     </section>
                 ))}
             </div>
+
+            {/* Industries Supported Section */}
+            <section className="bg-gray-50 py-24 sm:py-32">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
+                            Industries Supported
+                        </h2>
+                        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                            Our expertise is built through deep operational involvement across diverse sectors,
+                            solving complex delivery and coordination challenges.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {[
+                            {
+                                id: 'federal',
+                                title: 'Federal & Public Sector',
+                                description: 'Modernizing delivery practices, Agile adoption, and IT infrastructure modernization in highly regulated environments.',
+                                icon: Landmark,
+                                color: 'text-blue-600',
+                                bgColor: 'bg-blue-50'
+                            },
+                            {
+                                id: 'real-estate',
+                                title: 'Real Estate & Development',
+                                description: 'Bridging the gap between ownership and execution through structured workflows and embedded operational support.',
+                                icon: Building2,
+                                color: 'text-emerald-600',
+                                bgColor: 'bg-emerald-50'
+                            },
+                            {
+                                id: 'construction',
+                                title: 'Construction',
+                                description: 'Improving coordination between ownership, primes, and vendors to ensure operational clarity and execution discipline.',
+                                icon: HardHat,
+                                color: 'text-orange-600',
+                                bgColor: 'bg-orange-50'
+                            },
+                            {
+                                id: 'water',
+                                title: 'Water Damage & Restoration',
+                                description: 'Providing business management support and foundational operational structures for growing restoration businesses.',
+                                icon: Droplets,
+                                color: 'text-cyan-600',
+                                bgColor: 'bg-cyan-50'
+                            }
+                        ].map((industry) => (
+                            <Link
+                                key={industry.id}
+                                href={`/insights-and-engagements?industry=${industry.id}`}
+                                className="group flex flex-col p-8 bg-white border border-gray-200 rounded-2xl hover:shadow-xl transition-all hover:-translate-y-1"
+                            >
+                                <div className={`h-14 w-14 ${industry.bgColor} ${industry.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                                    <industry.icon className="h-7 w-7" />
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-900 mb-4">{industry.title}</h3>
+                                <p className="text-gray-600 text-sm leading-relaxed mb-8 flex-grow">
+                                    {industry.description}
+                                </p>
+                                <div className="flex items-center text-sm font-semibold text-blue-600 group-hover:gap-2 transition-all">
+                                    View Engagements <ChevronRight className="h-4 w-4" />
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
             <section className="bg-slate-900 py-16 text-center">
                 <div className="max-w-3xl mx-auto px-4">

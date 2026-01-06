@@ -19,8 +19,8 @@ export default function Home() {
               Turning Strategy Into <span className="text-blue-600">Execution</span>
             </h1>
             <p className="mt-6 text-xl leading-8 text-gray-600 mb-10 max-w-2xl mx-auto">
-              We help organizations deliver complex initiatives with clarity, discipline, and measurable
-              results through pragmatic leadership, modern delivery practices, and data-driven decision making.
+              We provide systems-first consulting and embedded delivery leadership to help organizations
+              achieve operational clarity and execution discipline in complex environments.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
@@ -75,32 +75,32 @@ export default function Home() {
             {[
               {
                 title: "Business Process Optimization",
-                description: "Redesigning workflows, eliminating bottlenecks, and creating efficient, scalable processes that improve operational performance.",
+                description: "Eliminating friction and bottlenecks through structured workflow redesign and clear operational ownership.",
                 icon: Workflow
               },
               {
-                title: "Agile Delivery & Project Leadership",
-                description: "Driving predictable delivery through structured Agile practices, sprint planning, roadmapping, and cross-functional team coordination.",
+                title: "Embedded Delivery Leadership",
+                description: "Hands-on coordination and execution discipline to stabilize complex cross-functional initiatives.",
                 icon: Zap
               },
               {
-                title: "Data Analytics & Reporting",
-                description: "Designing KPIs, dashboards, and automated reporting systems that give leaders clarity, transparency, and actionable insights.",
+                title: "Operational Visibility & Data",
+                description: "Turning raw delivery data into actionable insight through standardized KPIs and automated reporting systems.",
                 icon: BarChart3
               },
               {
-                title: "Infrastructure & IT Operations Support",
-                description: "Supporting system deployments, triage workflows, RHEL environments, STIG validation, hardware lifecycle, and operational readiness.",
+                title: "Infrastructure & IT Ops Support",
+                description: "Managing system deployments, operational readiness, and IT service management with technical precision.",
                 icon: Server
               },
               {
-                title: "AI & Automation Advisory",
-                description: "Helping teams identify practical automation opportunities and prototyping lightweight AI-powered workflows or agents.",
+                title: "Automation & AI Advisory",
+                description: "Identifying and prototyping practical, non-production automation to streamline repetitive operational tasks.",
                 icon: Bot
               },
               {
-                title: "Technical Enablement & Software Support",
-                description: "Providing guidance on system design, integrations, low-code tools, and targeted development support to accelerate delivery.",
+                title: "Execution Enablement",
+                description: "Equipping teams with the tools, documentation, and processes needed to sustain results and reduce service reliance.",
                 icon: Terminal
               }
             ].map((service, index) => (

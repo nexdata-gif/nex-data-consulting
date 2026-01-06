@@ -4,8 +4,8 @@ import { Search, Map, BarChart2, FileCheck } from 'lucide-react';
 export default function Approach() {
     const steps = [
         {
-            title: "Discovery & Rapid Assessment",
-            description: "We start by understanding your environment, objectives, and constraints. This isn't a month-long academic exercise—it's a targeted review to establish the facts, identify risks, and align on what 'good' looks like.",
+            title: "Discovery as a Discipline",
+            description: "Discovery is not a call—it's a process. We perform structured fact-finding to identify core operational constraints, risks, and objectives before recommending an engagement model.",
             icon: Search
         },
         {

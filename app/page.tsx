@@ -37,31 +37,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Vision & Mission */}
-      <section className="py-16 sm:py-24 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Vision</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                To build a lean, trusted consulting firm that helps organizations operate more effectively by
-                modernizing systems, empowering teams, and delivering measurable impact without
-                unnecessary complexity or overhead.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Mission</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                To help organizations deliver complex initiatives with clarity, discipline, and integrity —
-                turning strategy into execution through pragmatic leadership, modern delivery practices,
-                and data-driven decision making.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Grid */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -112,6 +87,44 @@ export default function Home() {
                 <p className="text-gray-600 leading-relaxed flex-grow">{service.description}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-12 flex flex-wrap justify-center gap-6">
+            <Link
+              href="/services-and-capabilities"
+              className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-500 transition-colors"
+            >
+              Services & Capabilities <span className="ml-2">→</span>
+            </Link>
+            <Link
+              href="/insights-and-engagements"
+              className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-500 transition-colors"
+            >
+              Insights & Engagements <span className="ml-2">→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision & Mission */}
+      <section className="py-16 sm:py-24 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Vision</h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                To build a lean, trusted consulting firm that helps organizations operate more effectively by
+                modernizing systems, empowering teams, and delivering measurable impact without
+                unnecessary complexity or overhead.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Mission</h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                To help organizations deliver complex initiatives with clarity, discipline, and integrity.
+                Turning strategy into execution through pragmatic leadership, modern delivery practices,
+                and data driven decision making.
+              </p>
+            </div>
           </div>
         </div>
       </section>

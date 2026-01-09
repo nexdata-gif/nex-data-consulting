@@ -127,7 +127,8 @@ export default function ServicesAndCapabilities() {
         },
         {
             id: "tech-enablement",
-            title: "Technical Enablement & Software Support",
+            title: "Technical Enablement & Infrastructure Delivery Support",
+            subtitle: "Helping people, workflows, and systems execute together",
             icon: Terminal,
             focus: "Help teams implement, configure, and adopt tools effectively—improving productivity, documentation, and operational consistency.",
             problems: [
@@ -152,9 +153,9 @@ export default function ServicesAndCapabilities() {
             ]
         },
         {
-            id: "ai-advisory",
-            title: "AI & Automation Advisory",
-            subtitle: "(Non-Production)",
+            id: "ai-automation",
+            title: "AI & Automation Enablement",
+            subtitle: "Practical automation that reduces overhead and scales execution",
             icon: Bot,
             focus: "Identify and prototype practical automation opportunities and AI-enabled workflows while maintaining responsible governance.",
             problems: [
@@ -325,6 +326,24 @@ export default function ServicesAndCapabilities() {
                                             {stream.id === 'infrastructure-ops' && (
                                                 <Link
                                                     href="/services-and-capabilities/infrastructure-delivery"
+                                                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group"
+                                                >
+                                                    View Delivery Model <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                                </Link>
+                                            )}
+
+                                            {stream.id === 'tech-enablement' && (
+                                                <Link
+                                                    href="/services-and-capabilities/technical-enablement"
+                                                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group"
+                                                >
+                                                    View Delivery Model <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                                </Link>
+                                            )}
+
+                                            {stream.id === 'ai-automation' && (
+                                                <Link
+                                                    href="/services-and-capabilities/ai-automation"
                                                     className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group"
                                                 >
                                                     View Delivery Model <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

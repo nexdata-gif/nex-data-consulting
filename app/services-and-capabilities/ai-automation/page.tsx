@@ -11,7 +11,8 @@ import {
     ShieldCheck,
     AlertTriangle,
     LineChart,
-    Activity
+    Activity,
+    Network
 } from 'lucide-react';
 
 export default function AIAutomationEnablementPage() {

@@ -295,7 +295,7 @@ export default function ServicesAndCapabilities() {
                                             <h3 className="text-gray-900 font-bold mb-6 flex items-center gap-2 text-lg border-b border-gray-100 pb-2">
                                                 <ArrowDown className="h-5 w-5 text-gray-500" /> Engagement Outputs
                                             </h3>
-                                            <ul className="space-y-3">
+                                            <ul className="space-y-3 mb-8">
                                                 {stream.outputs.map((output, idx) => (
                                                     <li key={idx} className="flex items-start gap-3 text-gray-600">
                                                         <div className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0" />
@@ -303,6 +303,15 @@ export default function ServicesAndCapabilities() {
                                                     </li>
                                                 ))}
                                             </ul>
+
+                                            {stream.id === 'infrastructure-ops' && (
+                                                <Link
+                                                    href="/services-and-capabilities/infrastructure-delivery"
+                                                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group"
+                                                >
+                                                    View Delivery Model <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                                </Link>
+                                            )}
                                         </div>
                                     </div>
                                 </div>

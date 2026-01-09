@@ -304,6 +304,15 @@ export default function ServicesAndCapabilities() {
                                                 ))}
                                             </ul>
 
+                                            {stream.id === 'agile-delivery' && (
+                                                <Link
+                                                    href="/services-and-capabilities/agile-delivery"
+                                                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group"
+                                                >
+                                                    View Delivery Model <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                                </Link>
+                                            )}
+
                                             {stream.id === 'infrastructure-ops' && (
                                                 <Link
                                                     href="/services-and-capabilities/infrastructure-delivery"

@@ -74,7 +74,8 @@ export default function ServicesAndCapabilities() {
         },
         {
             id: "data-analytics",
-            title: "Data Analytics & Reporting Enablement",
+            title: "Data Analytics & Decision Enablement",
+            subtitle: "Turning operational data into trusted decision support",
             icon: BarChart3,
             focus: "Turn operational and delivery data into actionable insight through dashboards, KPIs, and automated reporting.",
             problems: [
@@ -304,6 +305,15 @@ export default function ServicesAndCapabilities() {
                                                     </li>
                                                 ))}
                                             </ul>
+
+                                            {stream.id === 'data-analytics' && (
+                                                <Link
+                                                    href="/services-and-capabilities/data-analytics"
+                                                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group"
+                                                >
+                                                    View Delivery Model <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                                </Link>
+                                            )}
 
                                             {stream.id === 'process-optimization' && (
                                                 <Link

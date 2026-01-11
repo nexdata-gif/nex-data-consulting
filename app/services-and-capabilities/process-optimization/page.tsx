@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import React from 'react';
 import {
     ChevronLeft,
     ArrowRight,
@@ -11,7 +12,13 @@ import {
     AlertCircle,
     Link as LinkIcon,
     Accessibility,
-    Zap
+    Zap,
+    XCircle,
+    CheckCircle2,
+    Eye,
+    Layers,
+    ArrowUp,
+    Activity
 } from 'lucide-react';
 
 export default function BusinessProcessOptimizationPage() {
@@ -55,19 +62,6 @@ export default function BusinessProcessOptimizationPage() {
                         </p>
                     </div>
 
-                    {/* HERO Visual Placeholder */}
-                    <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-12 text-center">
-                        <div className="max-w-md mx-auto">
-                            <Workflow className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-                            <span className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">[VISUAL PLACEHOLDER]</span>
-                            <div className="text-left bg-white p-4 rounded-lg border border-slate-100 shadow-sm inline-block w-full">
-                                <p className="text-xs font-bold text-slate-500 uppercase">Name: The Friction-to-Flow Bridge</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Purpose: Contrast fragmented, high-friction work with optimized, high-throughput flow.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Type: Before/After comparison diagram.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Notes: Executive-safe, minimalist representation of throughput gains.</p>
-                            </div>
-                        </div>
-                    </div>
                 </section>
 
                 {/* 2. WHAT THIS SERVICE INCLUDES */}
@@ -93,18 +87,6 @@ export default function BusinessProcessOptimizationPage() {
                         ))}
                     </div>
 
-                    <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-12 text-center">
-                        <div className="max-w-md mx-auto">
-                            <Target className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-                            <span className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">[VISUAL PLACEHOLDER]</span>
-                            <div className="text-left bg-white p-4 rounded-lg border border-slate-100 shadow-sm inline-block w-full">
-                                <p className="text-xs font-bold text-slate-500 uppercase">Name: Flow Optimization Matrix</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Purpose: Map service areas to specific operational outcomes.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Type: Grid or quadrant diagram.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Notes: Focus on clarity and simplicity, avoiding technical notation.</p>
-                            </div>
-                        </div>
-                    </div>
                 </section>
 
                 {/* 3. EXECUTION AREA 1 — INTAKE, DEMAND, AND WORK ENTRY */}
@@ -121,17 +103,42 @@ export default function BusinessProcessOptimizationPage() {
                         </ul>
                     </div>
 
-                    <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-12 text-center">
-                        <div className="max-w-md mx-auto">
-                            <MousePointer2 className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-                            <span className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">[VISUAL PLACEHOLDER]</span>
-                            <div className="text-left bg-white p-4 rounded-lg border border-slate-100 shadow-sm inline-block w-full">
-                                <p className="text-xs font-bold text-slate-500 uppercase">Name: Intake Funnel & Filter</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Purpose: Visualize how raw demand is filtered and prioritized into disciplined execution.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Type: Funnel or gateway diagram.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Notes: Professional, emphasizing control without creating bottlenecks.</p>
+                    {/* Section 3 Visual - Intake Funnel & Filter */}
+                    <div className="bg-slate-900 rounded-3xl p-8 md:p-16 mb-12 relative overflow-hidden flex items-center justify-center">
+                        <div className="relative w-full max-w-sm space-y-2 z-10">
+                            {/* Demand Layer */}
+                            <div className="relative bg-white/5 border border-white/10 rounded-t-3xl p-6 flex flex-col items-center group overflow-hidden">
+                                <div className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">Raw Demand Signals</div>
+                                <div className="flex gap-4">
+                                    {[1, 2, 3, 4, 5].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-slate-700" />)}
+                                </div>
+                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900 pointer-events-none" />
+                            </div>
+
+                            {/* Filtering Layer */}
+                            <div className="mx-4 relative group">
+                                <div className="bg-blue-600 border border-blue-500 p-8 flex items-center justify-between text-white transition-all">
+                                    <div className="space-y-1">
+                                        <p className="text-[10px] font-bold text-blue-200 uppercase tracking-widest">Disciplined Filter</p>
+                                        <p className="text-xs font-semibold italic">Priority, Value, Capacity</p>
+                                    </div>
+                                    <Target className="h-6 w-6 text-blue-300 animate-pulse" />
+                                </div>
+                                <div className="absolute -left-2 -right-2 top-1/2 -translate-y-1/2 h-px bg-blue-400 border-t border-dashed opacity-20" />
+                            </div>
+
+                            {/* Ready Layer */}
+                            <div className="mx-12 p-10 bg-white rounded-b-3xl border border-blue-100 flex flex-col items-center text-center shadow-2xl">
+                                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-3">
+                                    <Zap className="h-5 w-5 text-blue-600" />
+                                </div>
+                                <h4 className="text-sm font-bold text-slate-900 uppercase tracking-widest">Ready to Execute</h4>
+                                <p className="text-[10px] text-slate-500 leading-tight mt-1 italic">High-clarity items only</p>
                             </div>
                         </div>
+
+                        {/* Background Grid Accent */}
+                        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
                     </div>
                 </section>
 
@@ -149,16 +156,35 @@ export default function BusinessProcessOptimizationPage() {
                         </ul>
                     </div>
 
-                    <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-12 text-center">
-                        <div className="max-w-md mx-auto">
-                            <Users className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-                            <span className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">[VISUAL PLACEHOLDER]</span>
-                            <div className="text-left bg-white p-4 rounded-lg border border-slate-100 shadow-sm inline-block w-full">
-                                <p className="text-xs font-bold text-slate-500 uppercase">Name: Ownership Accountability Map</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Purpose: Show clear alignment between roles and business outcomes.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Type: Connection or nodes diagram.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Notes: Simple, showing direct accountability lines.</p>
+                    {/* Section 4 Visual - Ownership Accountability Map */}
+                    <div className="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 mb-12 shadow-sm">
+                        <div className="relative max-w-lg mx-auto py-12">
+                            {/* Horizontal Connection Map */}
+                            <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+                                {[
+                                    { role: "Demand Owner", outcome: "Priority Clarity" },
+                                    { role: "Process Owner", outcome: "Flow Integrity" },
+                                    { role: "Execution Lead", outcome: "Target Delivery" }
+                                ].map((node, i) => (
+                                    <div key={i} className="flex flex-col items-center group w-full max-w-[160px]">
+                                        <div className="w-16 h-16 rounded-2xl bg-slate-900 flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
+                                            <Users className="h-7 w-7 text-blue-400" />
+                                        </div>
+                                        <div className="text-center">
+                                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">{node.role}</p>
+                                            <div className="h-px w-8 bg-blue-500 mx-auto mb-2" />
+                                            <p className="text-sm font-bold text-slate-900">{node.outcome}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
+
+                            {/* Connecting Line (Desktop) */}
+                            <div className="hidden md:block absolute top-[60px] left-0 right-0 h-0.5 bg-slate-100 -z-0" />
+                        </div>
+                        <div className="mt-4 flex items-center justify-center gap-4">
+                            <div className="w-2 h-2 rounded-full bg-blue-500" />
+                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">Disciplined Accountability Framework</span>
                         </div>
                     </div>
                 </section>
@@ -177,16 +203,28 @@ export default function BusinessProcessOptimizationPage() {
                         </ul>
                     </div>
 
-                    <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-12 text-center">
-                        <div className="max-w-md mx-auto">
-                            <Clock className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-                            <span className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">[VISUAL PLACEHOLDER]</span>
-                            <div className="text-left bg-white p-4 rounded-lg border border-slate-100 shadow-sm inline-block w-full">
-                                <p className="text-xs font-bold text-slate-500 uppercase">Name: Seamless Handoff Lifecycle</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Purpose: Illustrate the elimination of wait states between process steps.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Type: Linear flow or chevron diagram.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Notes: Emphasize continuous movement and clarity.</p>
-                            </div>
+                    {/* Section 5 Visual - Seamless Handoff Lifecycle */}
+                    <div className="bg-slate-50 rounded-3xl p-8 md:p-12 mb-12 border border-slate-200 shadow-inner">
+                        <div className="flex flex-col md:flex-row items-center gap-4 max-w-3xl mx-auto">
+                            {[
+                                { step: "Staged", icon: Workflow },
+                                { step: "Validated", icon: ShieldCheck },
+                                { step: "Transferred", icon: LinkIcon },
+                                { step: "Activated", icon: Zap }
+                            ].map((item, i) => (
+                                <React.Fragment key={i}>
+                                    <div className="flex-grow w-full bg-white border border-slate-200 p-6 rounded-2xl flex flex-col items-center group transition-all hover:border-blue-500 hover:shadow-md">
+                                        <item.icon className="h-6 w-6 text-slate-300 mb-3 group-hover:text-blue-500 transition-colors" />
+                                        <span className="text-sm font-bold text-slate-900 group-hover:text-blue-600 uppercase tracking-tighter">{item.step}</span>
+                                    </div>
+                                    {i < 3 && (
+                                        <ArrowRight className="h-5 w-5 text-slate-200 hidden md:block" />
+                                    )}
+                                </React.Fragment>
+                            ))}
+                        </div>
+                        <div className="mt-10 text-center">
+                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest opacity-80">Cycle Time Optimization Model</p>
                         </div>
                     </div>
                 </section>
@@ -205,17 +243,35 @@ export default function BusinessProcessOptimizationPage() {
                         </ul>
                     </div>
 
-                    <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-12 text-center">
-                        <div className="max-w-md mx-auto">
-                            <ShieldCheck className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-                            <span className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">[VISUAL PLACEHOLDER]</span>
-                            <div className="text-left bg-white p-4 rounded-lg border border-slate-100 shadow-sm inline-block w-full">
-                                <p className="text-xs font-bold text-slate-500 uppercase">Name: Decision Acceleration Map</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Purpose: Visualize how streamlined decision points keep work moving.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Type: Logic or decision tree (simplified).</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Notes: Professional, emphasizing speed and accountability.</p>
+                    {/* Section 6 Visual - Decision Acceleration Map */}
+                    <div className="bg-slate-900 rounded-3xl p-8 md:p-12 mb-12 text-white relative overflow-hidden shadow-2xl">
+                        <div className="max-w-md mx-auto relative z-10 space-y-6">
+                            {/* Standard Level */}
+                            <div className="p-5 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-between group hover:bg-white/10 transition-colors">
+                                <div className="space-y-1">
+                                    <h5 className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Execution Level</h5>
+                                    <p className="text-sm font-semibold text-white">80% Decided at Point of Work</p>
+                                </div>
+                                <Zap className="h-6 w-6 text-blue-500/50" />
+                            </div>
+
+                            {/* Escalation Path */}
+                            <div className="flex justify-center">
+                                <div className="h-8 w-px bg-gradient-to-b from-blue-500/50 to-emerald-500/50 border-l border-dashed border-blue-500/30" />
+                            </div>
+
+                            {/* Strategic Level */}
+                            <div className="p-5 bg-emerald-600/10 border border-emerald-500/20 rounded-2xl flex items-center justify-between group hover:bg-emerald-600/20 transition-colors">
+                                <div className="space-y-1">
+                                    <h5 className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Escalation Threshold</h5>
+                                    <p className="text-sm font-semibold text-white">High-Impact / Multi-Org Bounds</p>
+                                </div>
+                                <Target className="h-6 w-6 text-emerald-500/50" />
                             </div>
                         </div>
+
+                        {/* Abstract Background Texture */}
+                        <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at center, #3b82f6 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
                     </div>
                 </section>
 
@@ -228,32 +284,50 @@ export default function BusinessProcessOptimizationPage() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                        {[
-                            { title: "Work Stalling Between Teams", text: "Fragmentation and broken handoffs causing delays. We focus on seamless transitions." },
-                            { title: "Over-Documentation", text: "Heavy processes that nobody follows. We focus on adoption and practical usability." },
-                            { title: "Hidden Work & Shadow Processes", text: "Teams building their own systems to bypass bureaucracy. We simplify the core model." },
-                            { title: "Lack of Clear Ownership", text: "Everyone is involved but nobody is responsible. We clarify accountability boundaries." }
-                        ].map((item, idx) => (
-                            <div key={idx} className="p-6 border border-slate-100 rounded-2xl bg-white shadow-sm flex items-start gap-4">
-                                <AlertCircle className="h-5 w-5 text-red-500 mt-1 flex-shrink-0" />
-                                <div>
-                                    <h4 className="font-bold text-slate-900 mb-1">{item.title}</h4>
-                                    <p className="text-sm text-slate-600">{item.text}</p>
+
+                    {/* Section 7 Visual - Failure Pattern Diagnostic Grid */}
+                    <div className="bg-slate-50/50 rounded-3xl border border-slate-200 overflow-hidden mt-12 shadow-sm">
+                        <div className="grid grid-cols-1 md:grid-cols-2">
+                            {/* Failure Patterns */}
+                            <div className="bg-white p-8 md:p-10 md:border-r border-slate-200">
+                                <h4 className="text-red-600 font-bold text-[10px] uppercase tracking-widest mb-10 flex items-center gap-2">
+                                    <XCircle className="h-4 w-4" /> Systemic Failure Patterns
+                                </h4>
+                                <div className="space-y-8">
+                                    {[
+                                        { title: "Work Stalling Between Teams", desc: "Fragmentation and broken handoffs causing delays. We focus on seamless transitions." },
+                                        { title: "Over-Documentation", desc: "Heavy processes that nobody follows. We focus on adoption and practical usability." },
+                                        { title: "Hidden Work & Shadow Processes", desc: "Teams building their own systems to bypass bureaucracy. We simplify the core model." },
+                                        { title: "Lack of Clear Ownership", desc: "Everyone is involved but nobody is responsible. We clarify accountability boundaries." }
+                                    ].map((pattern, i) => (
+                                        <div key={i} className="flex gap-4">
+                                            <div className="h-1.5 w-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
+                                            <div>
+                                                <p className="text-slate-900 text-sm font-bold mb-1">{pattern.title}</p>
+                                                <p className="text-slate-600 text-xs italic leading-relaxed">{pattern.desc}</p>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
-                        ))}
-                    </div>
-
-                    <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-12 text-center">
-                        <div className="max-w-md mx-auto">
-                            <Accessibility className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-                            <span className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">[VISUAL PLACEHOLDER]</span>
-                            <div className="text-left bg-white p-4 rounded-lg border border-slate-100 shadow-sm inline-block w-full">
-                                <p className="text-xs font-bold text-slate-500 uppercase">Name: Failure Pattern Diagnostic Grid</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Purpose: Help leaders identify where their work flow is breaking down.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Type: Table or diagnostic chart.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Notes: Clean and solution-oriented.</p>
+                            {/* Corrective Disciplines */}
+                            <div className="bg-slate-50/30 p-8 md:p-10">
+                                <h4 className="text-blue-600 font-bold text-[10px] uppercase tracking-widest mb-10 flex items-center gap-2">
+                                    <CheckCircle2 className="h-4 w-4" /> Corrective Execution Disciplines
+                                </h4>
+                                <div className="space-y-10">
+                                    {[
+                                        "Unified Flow & Handoff Standards",
+                                        "Practical Redesign & Usage Adoption",
+                                        "Simplified Core Model Design",
+                                        "Explicit Accountability Mapping"
+                                    ].map((discipline, i) => (
+                                        <div key={i} className="flex gap-4">
+                                            <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
+                                            <p className="text-slate-900 text-sm font-semibold">{discipline}</p>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -284,18 +358,6 @@ export default function BusinessProcessOptimizationPage() {
                         ))}
                     </div>
 
-                    <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-12 text-center">
-                        <div className="max-w-md mx-auto">
-                            <Zap className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-                            <span className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">[VISUAL PLACEHOLDER]</span>
-                            <div className="text-left bg-white p-4 rounded-lg border border-slate-100 shadow-sm inline-block w-full">
-                                <p className="text-xs font-bold text-slate-500 uppercase">Name: Integrated Service Network</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Purpose: Visualize how process design acts as an enabler for all other NexData services.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Type: Relationship map or network diagram.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Notes: Highlight the centrality of operating model design.</p>
-                            </div>
-                        </div>
-                    </div>
                 </section>
 
                 {/* 9. APPLICABLE USE CASES */}
@@ -315,18 +377,6 @@ export default function BusinessProcessOptimizationPage() {
                         ))}
                     </div>
 
-                    <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-12 text-center">
-                        <div className="max-w-md mx-auto">
-                            <Workflow className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-                            <span className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">[VISUAL PLACEHOLDER]</span>
-                            <div className="text-left bg-white p-4 rounded-lg border border-slate-100 shadow-sm inline-block w-full">
-                                <p className="text-xs font-bold text-slate-500 uppercase">Name: Use Case Impact Icons</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Purpose: Categorical representation of where process optimization drives value.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Type: Icon grid.</p>
-                                <p className="text-xs font-bold text-slate-500 uppercase">Notes: Clean, professional, and diverse representation.</p>
-                            </div>
-                        </div>
-                    </div>
                 </section>
 
                 {/* 10. DELIVERY PHILOSOPHY */}
@@ -338,18 +388,6 @@ export default function BusinessProcessOptimizationPage() {
                         </p>
                     </div>
 
-                    {/* Closing Visual Placeholder */}
-                    <div className="absolute inset-0 opacity-20 flex items-center justify-center">
-                        <div className="w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-xl"></div>
-                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
-                            <span className="block text-[10px] font-bold text-white uppercase tracking-[0.3em] mb-2">[VISUAL PLACEHOLDER]</span>
-                            <div className="text-left">
-                                <p className="text-[10px] font-bold text-white uppercase opacity-70">Name: Closing Execution Grid</p>
-                                <p className="text-[10px] font-bold text-white uppercase opacity-70">Purpose: Abstract visual representing the intersection of flow and clarity.</p>
-                                <p className="text-[10px] font-bold text-white uppercase opacity-70">Type: Abstract geometric pattern.</p>
-                            </div>
-                        </div>
-                    </div>
                 </section>
 
                 <footer className="text-center pb-20">

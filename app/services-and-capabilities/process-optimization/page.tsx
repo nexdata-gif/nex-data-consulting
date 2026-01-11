@@ -103,42 +103,73 @@ export default function BusinessProcessOptimizationPage() {
                         </ul>
                     </div>
 
-                    {/* Section 3 Visual - Intake Funnel & Filter */}
-                    <div className="bg-slate-900 rounded-3xl p-8 md:p-16 mb-12 relative overflow-hidden flex items-center justify-center">
-                        <div className="relative w-full max-w-sm space-y-2 z-10">
-                            {/* Demand Layer */}
-                            <div className="relative bg-white/5 border border-white/10 rounded-t-3xl p-6 flex flex-col items-center group overflow-hidden">
-                                <div className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">Raw Demand Signals</div>
-                                <div className="flex gap-4">
-                                    {[1, 2, 3, 4, 5].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-slate-700" />)}
+                    {/* Section 3 Visual - Disciplined Intake Gating Flow */}
+                    <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12 mb-12 shadow-sm overflow-hidden">
+                        <div className="max-w-2xl mx-auto space-y-4">
+                            {/* 1. Raw Demand */}
+                            <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm relative group overflow-hidden">
+                                <div className="flex items-center justify-between mb-2">
+                                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Stage 01</span>
+                                    <h5 className="text-sm font-bold text-slate-900 uppercase tracking-tighter">Raw Demand</h5>
                                 </div>
-                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900 pointer-events-none" />
+                                <div className="grid grid-cols-3 gap-2 opacity-50">
+                                    <div className="text-[9px] bg-slate-50 p-2 rounded border border-slate-100 italic">Unstructured requests</div>
+                                    <div className="text-[9px] bg-slate-50 p-2 rounded border border-slate-100 italic text-center">Ad hoc asks</div>
+                                    <div className="text-[9px] bg-slate-50 p-2 rounded border border-slate-100 italic text-right">Stakeholder inputs</div>
+                                </div>
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-50/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                             </div>
 
-                            {/* Filtering Layer */}
-                            <div className="mx-4 relative group">
-                                <div className="bg-blue-600 border border-blue-500 p-8 flex items-center justify-between text-white transition-all">
-                                    <div className="space-y-1">
-                                        <p className="text-[10px] font-bold text-blue-200 uppercase tracking-widest">Disciplined Filter</p>
-                                        <p className="text-xs font-semibold italic">Priority, Value, Capacity</p>
+                            <div className="flex justify-center h-4"><ArrowRight className="h-4 w-4 text-slate-300 rotate-90" /></div>
+
+                            {/* 2. Decision Gate 1 */}
+                            <div className="mx-4 md:mx-12 p-5 bg-slate-900 rounded-xl border-l-4 border-blue-500 flex items-center justify-between group">
+                                <div className="space-y-1">
+                                    <h6 className="text-[10px] font-bold text-blue-400 uppercase tracking-widest leading-none mb-1">Decision Gate 01</h6>
+                                    <p className="text-sm font-bold text-white">Business Priority Alignment</p>
+                                    <p className="text-[10px] text-slate-400 italic">Alignment to business value & explicit prioritization</p>
+                                </div>
+                                <Target className="h-6 w-6 text-blue-500/50 group-hover:text-blue-500 transition-colors" />
+                            </div>
+
+                            <div className="flex justify-center h-4"><ArrowRight className="h-4 w-4 text-slate-300 rotate-90" /></div>
+
+                            {/* 3. Decision Gate 2 */}
+                            <div className="mx-4 md:mx-12 p-5 bg-slate-900 rounded-xl border-l-4 border-emerald-500 flex items-center justify-between group">
+                                <div className="space-y-1">
+                                    <h6 className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest leading-none mb-1">Decision Gate 02</h6>
+                                    <p className="text-sm font-bold text-white">Ownership & Accountability Assigned</p>
+                                    <p className="text-[10px] text-slate-400 italic">Clear accountable owner & decision rights established</p>
+                                </div>
+                                <Users className="h-6 w-6 text-emerald-500/50 group-hover:text-emerald-500 transition-colors" />
+                            </div>
+
+                            <div className="flex justify-center h-4"><ArrowRight className="h-4 w-4 text-slate-300 rotate-90" /></div>
+
+                            {/* 4. Decision Gate 3 */}
+                            <div className="mx-4 md:mx-12 p-5 bg-slate-900 rounded-xl border-l-4 border-amber-500 flex items-center justify-between group">
+                                <div className="space-y-1">
+                                    <h6 className="text-[10px] font-bold text-amber-400 uppercase tracking-widest leading-none mb-1">Decision Gate 03</h6>
+                                    <p className="text-sm font-bold text-white">Definition of Ready (DoR)</p>
+                                    <p className="text-[10px] text-slate-400 italic font-medium">Scope clarified, dependencies understood, criteria defined</p>
+                                </div>
+                                <ShieldCheck className="h-6 w-6 text-amber-500/50 group-hover:text-amber-500 transition-colors" />
+                            </div>
+
+                            <div className="flex justify-center h-4"><ArrowRight className="h-4 w-4 text-slate-300 rotate-90" /></div>
+
+                            {/* 5. Ready to Execute */}
+                            <div className="bg-blue-600 rounded-2xl p-6 text-center shadow-xl shadow-blue-100 relative overflow-hidden group">
+                                <div className="relative z-10 flex flex-col items-center">
+                                    <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                                        <Zap className="h-6 w-6 text-white" />
                                     </div>
-                                    <Target className="h-6 w-6 text-blue-300 animate-pulse" />
+                                    <h4 className="text-lg font-bold text-white uppercase tracking-widest">Ready to Execute</h4>
+                                    <p className="text-[10px] text-blue-100 uppercase font-bold tracking-[0.2em] mt-1">Enters Execution Backlog</p>
                                 </div>
-                                <div className="absolute -left-2 -right-2 top-1/2 -translate-y-1/2 h-px bg-blue-400 border-t border-dashed opacity-20" />
-                            </div>
-
-                            {/* Ready Layer */}
-                            <div className="mx-12 p-10 bg-white rounded-b-3xl border border-blue-100 flex flex-col items-center text-center shadow-2xl">
-                                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-3">
-                                    <Zap className="h-5 w-5 text-blue-600" />
-                                </div>
-                                <h4 className="text-sm font-bold text-slate-900 uppercase tracking-widest">Ready to Execute</h4>
-                                <p className="text-[10px] text-slate-500 leading-tight mt-1 italic">High-clarity items only</p>
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                             </div>
                         </div>
-
-                        {/* Background Grid Accent */}
-                        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
                     </div>
                 </section>
 

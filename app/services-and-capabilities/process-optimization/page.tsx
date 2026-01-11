@@ -123,37 +123,37 @@ export default function BusinessProcessOptimizationPage() {
                             <div className="flex justify-center h-4"><ArrowRight className="h-4 w-4 text-slate-300 rotate-90" /></div>
 
                             {/* 2. Decision Gate 1 */}
-                            <div className="mx-4 md:mx-12 p-5 bg-slate-900 rounded-xl border-l-4 border-blue-500 flex items-center justify-between group">
+                            <div className="mx-4 md:mx-12 p-5 bg-blue-600 rounded-xl border-l-4 border-white flex items-center justify-between group">
                                 <div className="space-y-1">
-                                    <h6 className="text-[10px] font-bold text-blue-400 uppercase tracking-widest leading-none mb-1">Decision Gate 01</h6>
+                                    <h6 className="text-[10px] font-bold text-blue-100 uppercase tracking-widest leading-none mb-1">Decision Gate 01</h6>
                                     <p className="text-sm font-bold text-white">Business Priority Alignment</p>
-                                    <p className="text-[10px] text-slate-400 italic">Alignment to business value & explicit prioritization</p>
+                                    <p className="text-[10px] text-blue-200 italic">Alignment to business value & explicit prioritization</p>
                                 </div>
-                                <Target className="h-6 w-6 text-blue-500/50 group-hover:text-blue-500 transition-colors" />
+                                <Target className="h-6 w-6 text-white/50 group-hover:text-white transition-colors" />
                             </div>
 
                             <div className="flex justify-center h-4"><ArrowRight className="h-4 w-4 text-slate-300 rotate-90" /></div>
 
                             {/* 3. Decision Gate 2 */}
-                            <div className="mx-4 md:mx-12 p-5 bg-slate-900 rounded-xl border-l-4 border-emerald-500 flex items-center justify-between group">
+                            <div className="mx-4 md:mx-12 p-5 bg-slate-800 rounded-xl border-l-4 border-slate-600 flex items-center justify-between group">
                                 <div className="space-y-1">
-                                    <h6 className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest leading-none mb-1">Decision Gate 02</h6>
+                                    <h6 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">Decision Gate 02</h6>
                                     <p className="text-sm font-bold text-white">Ownership & Accountability Assigned</p>
                                     <p className="text-[10px] text-slate-400 italic">Clear accountable owner & decision rights established</p>
                                 </div>
-                                <Users className="h-6 w-6 text-emerald-500/50 group-hover:text-emerald-500 transition-colors" />
+                                <Users className="h-6 w-6 text-slate-500/50 group-hover:text-slate-400 transition-colors" />
                             </div>
 
                             <div className="flex justify-center h-4"><ArrowRight className="h-4 w-4 text-slate-300 rotate-90" /></div>
 
                             {/* 4. Decision Gate 3 */}
-                            <div className="mx-4 md:mx-12 p-5 bg-slate-900 rounded-xl border-l-4 border-amber-500 flex items-center justify-between group">
+                            <div className="mx-4 md:mx-12 p-5 bg-slate-900 rounded-xl border-l-4 border-amber-600/50 flex items-center justify-between group">
                                 <div className="space-y-1">
-                                    <h6 className="text-[10px] font-bold text-amber-400 uppercase tracking-widest leading-none mb-1">Decision Gate 03</h6>
-                                    <p className="text-sm font-bold text-white">Definition of Ready (DoR)</p>
-                                    <p className="text-[10px] text-slate-400 italic font-medium">Scope clarified, dependencies understood, criteria defined</p>
+                                    <h6 className="text-[10px] font-bold text-amber-500/70 uppercase tracking-widest leading-none mb-1">Decision Gate 03</h6>
+                                    <p className="text-sm font-bold text-white font-medium">Definition of Ready (DoR)</p>
+                                    <p className="text-[10px] text-slate-400 italic">Scope clarified, dependencies understood, criteria defined</p>
                                 </div>
-                                <ShieldCheck className="h-6 w-6 text-amber-500/50 group-hover:text-amber-500 transition-colors" />
+                                <ShieldCheck className="h-6 w-6 text-amber-600/40 group-hover:text-amber-500/70 transition-colors" />
                             </div>
 
                             <div className="flex justify-center h-4"><ArrowRight className="h-4 w-4 text-slate-300 rotate-90" /></div>

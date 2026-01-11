@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -6,8 +7,18 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
-                        <h3 className="text-sm font-semibold text-gray-500 tracking-wider uppercase">NexData Consulting</h3>
-                        <p className="mt-4 text-base text-gray-600">
+                        <div className="flex items-center gap-2 mb-4">
+                            <div className="relative w-6 h-6 rounded overflow-hidden border border-slate-200 bg-[#E7E7E5]">
+                                <Image
+                                    src="/images/logo.png"
+                                    alt="NexData Logo"
+                                    fill
+                                    className="object-cover scale-150"
+                                />
+                            </div>
+                            <h3 className="text-sm font-bold text-gray-900 tracking-wider uppercase">NexData</h3>
+                        </div>
+                        <p className="mt-4 text-sm text-gray-600">
                             Turning Strategy Into Execution.
                         </p>
                     </div>

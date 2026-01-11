@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Workflow,
   Zap,
@@ -15,6 +16,16 @@ export default function Home() {
       <section className="bg-white pt-16 pb-20 sm:pt-24 sm:pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="mx-auto max-w-4xl text-center">
+            <div className="flex justify-center mb-10">
+              <div className="relative w-24 h-24 rounded-2xl overflow-hidden border border-slate-100 shadow-xl bg-[#E7E7E5]">
+                <Image
+                  src="/images/logo.png"
+                  alt="NexData Logo"
+                  fill
+                  className="object-cover scale-150"
+                />
+              </div>
+            </div>
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl mb-8">
               Turning Strategy Into <span className="text-blue-600">Execution</span>
             </h1>

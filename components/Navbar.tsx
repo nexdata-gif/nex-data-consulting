@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -12,8 +13,16 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16 items-center">
                     <div className="flex-shrink-0 flex items-center">
-                        <Link href="/" className="text-xl font-bold text-gray-900 tracking-tight" onClick={() => setIsOpen(false)}>
-                            NexData Consulting
+                        <Link href="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
+                            <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-slate-100 shadow-sm group-hover:shadow-md transition-shadow bg-[#E7E7E5]">
+                                <Image
+                                    src="/images/logo.png"
+                                    alt="NexData Logo"
+                                    fill
+                                    className="object-cover scale-150"
+                                />
+                            </div>
+                            <span className="text-xl font-bold text-gray-900 tracking-tight">NexData<span className="text-blue-600">.</span></span>
                         </Link>
                     </div>
                     <div className="hidden sm:ml-6 sm:flex sm:space-x-8">

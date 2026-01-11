@@ -315,16 +315,19 @@ export default function BusinessProcessOptimizationPage() {
                                 <h4 className="text-blue-600 font-bold text-[10px] uppercase tracking-widest mb-10 flex items-center gap-2">
                                     <CheckCircle2 className="h-4 w-4" /> Corrective Execution Disciplines
                                 </h4>
-                                <div className="space-y-10">
+                                <div className="space-y-8">
                                     {[
-                                        "Unified Flow & Handoff Standards",
-                                        "Practical Redesign & Usage Adoption",
-                                        "Simplified Core Model Design",
-                                        "Explicit Accountability Mapping"
+                                        { title: "Unified Flow & Handoff Standards", desc: "Clear, consistent handoff points to eliminate delays, rework, and stalled work in cross-team delivery." },
+                                        { title: "Practical Redesign & Usage Adoption", desc: "Focus on real-world usage to ensure teams adopt and sustain the operating model without added overhead." },
+                                        { title: "Simplified Core Model Design", desc: "A durable set of core workflows defined to ensure consistent execution across all environments." },
+                                        { title: "Explicit Accountability Mapping", desc: "Visible ownership for decisions and outcomes so execution does not rely on constant escalation." }
                                     ].map((discipline, i) => (
                                         <div key={i} className="flex gap-4">
                                             <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
-                                            <p className="text-slate-900 text-sm font-semibold">{discipline}</p>
+                                            <div>
+                                                <p className="text-slate-900 text-sm font-bold mb-1">{discipline.title}</p>
+                                                <p className="text-slate-600 text-xs italic leading-relaxed">{discipline.desc}</p>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>

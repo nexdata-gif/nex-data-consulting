@@ -219,7 +219,7 @@ function InsightsAndEngagementsContent() {
 
                                     <div className="flex justify-end">
                                         <Link
-                                            href="#"
+                                            href="/insights-and-engagements/discovery-is-a-service"
                                             className="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2 transition-colors"
                                         >
                                             Read Full Article <ArrowRight className="h-4 w-4" />

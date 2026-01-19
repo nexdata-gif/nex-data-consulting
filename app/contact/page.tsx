@@ -70,58 +70,67 @@ export default function Contact() {
                     </div>
 
                     {/* Contact Form */}
-                    <div className="bg-white p-8 sm:p-12 rounded-[2.5rem] border border-gray-100 shadow-2xl shadow-slate-200/50">
-                        <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-8 tracking-tight">Send us a Message</h2>
-                        <form className="space-y-8">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                                <div className="space-y-2">
-                                    <label htmlFor="name" className="text-[13px] font-black text-gray-400 uppercase tracking-widest px-1">
-                                        Your Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                        className="block w-full bg-slate-50 border-0 rounded-2xl py-4 px-5 text-gray-900 font-bold placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all font-sans"
-                                        placeholder="John Doe"
-                                    />
-                                </div>
-
-                                <div className="space-y-2">
-                                    <label htmlFor="email" className="text-[13px] font-black text-gray-400 uppercase tracking-widest px-1">
-                                        Email Address
-                                    </label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        id="email"
-                                        className="block w-full bg-slate-50 border-0 rounded-2xl py-4 px-5 text-gray-900 font-bold placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all font-sans"
-                                        placeholder="john@example.com"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="space-y-2">
-                                <label htmlFor="message" className="text-[13px] font-black text-gray-400 uppercase tracking-widest px-1">
-                                    How can we help?
-                                </label>
-                                <textarea
-                                    name="message"
-                                    id="message"
-                                    rows={4}
-                                    className="block w-full bg-slate-50 border-0 rounded-2xl py-4 px-5 text-gray-900 font-bold placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all resize-none font-sans"
-                                    placeholder="Tell us about your project or inquiry..."
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="group/btn relative flex w-full justify-center items-center gap-3 rounded-2xl bg-slate-900 px-8 py-5 text-lg font-black text-white shadow-xl shadow-slate-200 hover:bg-black transition-all active:scale-[0.98]"
+                    <div className="animate-in fade-in slide-in-from-right-4 duration-700 delay-100">
+                        <div className="bg-white p-8 sm:p-12 rounded-[2.5rem] border border-gray-100 shadow-2xl shadow-slate-200/50">
+                            <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-8 tracking-tight">Send us a Message</h2>
+                            <form
+                                action="https://formspree.io/f/xvzzrwnp"
+                                method="POST"
+                                className="space-y-8"
                             >
-                                Send Message
-                                <Mail className="h-5 w-5 text-blue-400 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                            </button>
-                        </form>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                                    <div className="space-y-2">
+                                        <label htmlFor="name" className="text-[13px] font-black text-gray-400 uppercase tracking-widest px-1">
+                                            Your Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            id="name"
+                                            required
+                                            className="block w-full bg-slate-50 border-0 rounded-2xl py-4 px-5 text-gray-900 font-bold placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all font-sans"
+                                            placeholder="John Doe"
+                                        />
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <label htmlFor="email" className="text-[13px] font-black text-gray-400 uppercase tracking-widest px-1">
+                                            Email Address
+                                        </label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            id="email"
+                                            required
+                                            className="block w-full bg-slate-50 border-0 rounded-2xl py-4 px-5 text-gray-900 font-bold placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all font-sans"
+                                            placeholder="john@example.com"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="space-y-2">
+                                    <label htmlFor="message" className="text-[13px] font-black text-gray-400 uppercase tracking-widest px-1">
+                                        How can we help?
+                                    </label>
+                                    <textarea
+                                        name="message"
+                                        id="message"
+                                        rows={4}
+                                        required
+                                        className="block w-full bg-slate-50 border-0 rounded-2xl py-4 px-5 text-gray-900 font-bold placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 transition-all resize-none font-sans"
+                                        placeholder="Tell us about your project or inquiry..."
+                                    />
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    className="group/btn relative flex w-full justify-center items-center gap-3 rounded-2xl bg-slate-900 px-8 py-5 text-lg font-black text-white shadow-xl shadow-slate-200 hover:bg-black transition-all active:scale-[0.98]"
+                                >
+                                    Send Message
+                                    <Mail className="h-5 w-5 text-blue-400 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -66,54 +66,34 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu */}
-            {isOpen && (
-                <div className="sm:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-16 z-40 shadow-lg px-4 pb-6 pt-2">
-                    <div className="space-y-1">
-                        <Link
-                            href="/"
-                            className="block px-3 py-4 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 bg-white"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Home
-                        </Link>
-                        <Link
-                            href="/services-and-capabilities"
-                            className="block px-3 py-4 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 bg-white"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Services & Capabilities
-                        </Link>
-                        <Link
-                            href="/insights-and-engagements"
-                            className="block px-3 py-4 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 bg-white"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Insights & Engagements
-                        </Link>
-                        <Link
-                            href="/approach"
-                            className="block px-3 py-4 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 bg-white"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Approach
-                        </Link>
-                        <Link
-                            href="/about"
-                            className="block px-3 py-4 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 bg-white"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            About
-                        </Link>
-                        <Link
-                            href="/contact"
-                            className="block px-3 py-4 rounded-md text-base font-medium text-blue-600 hover:text-blue-700 hover:bg-blue-50 bg-white"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Contact
-                        </Link>
+            <div className={`sm:hidden fixed inset-0 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+                <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
+                <div className={`absolute top-16 left-0 w-full bg-white border-t border-gray-100 shadow-2xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+                    <div className="px-4 py-6 space-y-1">
+                        {[
+                            { name: 'Home', href: '/' },
+                            { name: 'Services & Capabilities', href: '/services-and-capabilities' },
+                            { name: 'Insights & Engagements', href: '/insights-and-engagements' },
+                            { name: 'Approach', href: '/approach' },
+                            { name: 'About', href: '/about' },
+                            { name: 'Contact', href: '/contact', primary: true }
+                        ].map((link) => (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className={`block px-4 py-3.5 rounded-xl text-base font-semibold transition-colors ${link.primary
+                                    ? 'text-white bg-blue-600 hover:bg-blue-700'
+                                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                                    }`}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
                     </div>
                 </div>
-            )}
+            </div>
+
         </nav>
     );
 };

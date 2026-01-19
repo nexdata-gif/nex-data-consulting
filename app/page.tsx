@@ -13,40 +13,42 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="bg-white pt-16 pb-20 sm:pt-24 sm:pb-32 overflow-hidden">
+      <section className="bg-white pt-12 pb-16 sm:pt-24 sm:pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="mx-auto max-w-4xl text-center">
-            <div className="flex justify-center mb-10">
-              <div className="relative w-24 h-24 rounded-2xl overflow-hidden border border-slate-100 shadow-xl bg-[#E7E7E5]">
+            <div className="flex justify-center mb-8 sm:mb-10">
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-slate-100 shadow-xl bg-[#E7E7E5] transition-transform hover:scale-105">
                 <Image
                   src="/images/logo.png"
                   alt="NexData Logo"
                   fill
                   className="object-cover scale-150"
+                  priority
                 />
               </div>
             </div>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl mb-8">
+            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl mb-6 sm:mb-8 leading-[1.1]">
               Turning Strategy Into <span className="text-blue-600">Execution</span>
             </h1>
-            <p className="mt-6 text-xl leading-8 text-gray-600 mb-10 max-w-2xl mx-auto">
+            <p className="mt-4 sm:mt-6 text-lg sm:text-xl leading-relaxed text-gray-600 mb-8 sm:mb-10 max-w-2xl mx-auto">
               We provide systems-first consulting and embedded delivery leadership to help organizations
               achieve operational clarity and execution discipline in complex environments.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6">
               <Link
                 href="/contact"
-                className="rounded-md bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-all"
+                className="w-full sm:w-auto rounded-xl bg-blue-600 px-8 py-4 text-base sm:text-sm font-semibold text-white shadow-lg hover:bg-blue-500 hover:shadow-blue-200 transition-all text-center"
               >
                 Start a Conversation
               </Link>
-              <Link href="/contact" className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors">
+              <Link href="/contact" className="text-base sm:text-sm font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors py-2">
                 Contact Us <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
+
 
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -119,18 +121,18 @@ export default function Home() {
       {/* Vision & Mission */}
       <section className="py-16 sm:py-24 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Vision</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16">
+            <div className="text-center lg:text-left">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Our Vision</h2>
+              <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 To build a lean, trusted consulting firm that helps organizations operate more effectively by
                 modernizing systems, empowering teams, and delivering measurable impact without
                 unnecessary complexity or overhead.
               </p>
             </div>
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Mission</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+            <div className="text-center lg:text-left">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Our Mission</h2>
+              <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 To help organizations deliver complex initiatives with clarity, discipline, and integrity.
                 Turning strategy into execution through pragmatic leadership, modern delivery practices,
                 and data driven decision making.
@@ -143,14 +145,14 @@ export default function Home() {
       {/* How We Work */}
       <section className="py-16 sm:py-24 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">How We Work</h2>
-            <p className="mt-4 text-xl text-slate-400">
+            <p className="mt-4 text-lg sm:text-xl text-slate-400">
               A pragmatic approach to sustainable results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-8 lg:gap-12">
             {[
               {
                 step: "01",
@@ -168,10 +170,12 @@ export default function Home() {
                 description: "Transfer knowledge, document processes, and ensure teams are equipped to sustain results after engagement ends."
               }
             ].map((phase, index) => (
-              <div key={index} className="relative">
-                <div className="text-5xl font-bold text-slate-600 mb-4">{phase.step}</div>
-                <h3 className="text-2xl font-bold text-white mb-4 relative z-10">{phase.title}</h3>
-                <p className="text-slate-300 leading-relaxed relative z-10">{phase.description}</p>
+              <div key={index} className="relative text-center sm:text-left">
+                <div className="text-4xl sm:text-5xl font-bold text-slate-700/50 mb-4">{phase.step}</div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 relative z-10">{phase.title}</h3>
+                <p className="text-slate-400 leading-relaxed relative z-10 text-base">
+                  {phase.description}
+                </p>
               </div>
             ))}
           </div>
@@ -184,18 +188,21 @@ export default function Home() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
             Ready to Move Forward?
           </h2>
-          <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto px-4 sm:px-0">
             Interested in working together? Let’s start with a conversation and discuss how we can help
             you deliver results.
           </p>
-          <Link
-            href="/contact"
-            className="rounded-md bg-white px-8 py-4 text-base font-semibold text-blue-600 shadow-sm hover:bg-blue-50 transition-colors"
-          >
-            Contact NexData Consulting
-          </Link>
+          <div className="px-4 sm:px-0">
+            <Link
+              href="/contact"
+              className="block sm:inline-block w-full sm:w-auto rounded-xl bg-white px-8 py-4 text-base font-semibold text-blue-600 shadow-xl hover:bg-blue-50 transition-all"
+            >
+              Contact NexData Consulting
+            </Link>
+          </div>
         </div>
       </section>
+
     </div>
   );
 }

@@ -183,10 +183,10 @@ export default function ServicesAndCapabilities() {
     return (
         <div className="bg-white min-h-screen">
             {/* Header */}
-            <section className="bg-slate-900 py-20 text-center text-white">
+            <section className="bg-slate-900 py-16 sm:py-20 text-center text-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Services & Capabilities</h1>
-                    <p className="mt-6 text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+                    <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">Services & Capabilities</h1>
+                    <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-0">
                         NexData Consulting provides advisory and delivery support across modernization, operations,
                         analytics, infrastructure, and enablement initiatives. We work hands-on with leadership and
                         delivery teams to turn strategy into execution with clarity, discipline, and measurable outcomes.
@@ -195,31 +195,31 @@ export default function ServicesAndCapabilities() {
             </section>
 
             {/* Categories & Anchor Links */}
-            <section className="bg-gray-50 border-b border-gray-200 sticky top-16 z-40 shadow-sm backdrop-blur-md bg-opacity-95">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                        <div>
-                            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-2">Core Services</span>
-                            <div className="flex flex-wrap gap-2">
+            <section className="bg-gray-50 border-b border-gray-200 sticky top-16 z-40 shadow-sm backdrop-blur-md bg-opacity-95 overflow-x-auto no-scrollbar">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 min-w-max md:min-w-0">
+                    <div className="flex flex-row md:flex-row justify-between items-center gap-8 md:gap-6">
+                        <div className="flex items-center gap-4">
+                            <span className="hidden sm:inline text-xs font-semibold text-gray-400 uppercase tracking-wider">Core</span>
+                            <div className="flex gap-2">
                                 {workStreams.slice(0, 3).map((stream) => (
                                     <Link
                                         key={stream.id}
                                         href={`#${stream.id}`}
-                                        className="text-sm font-medium text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-full transition-colors"
+                                        className="whitespace-nowrap text-[13px] font-semibold text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-3.5 py-2 rounded-full transition-colors border border-blue-100"
                                     >
-                                        {stream.title.split('&')[0]}
+                                        {stream.title.split('&')[0].trim()}
                                     </Link>
                                 ))}
                             </div>
                         </div>
-                        <div className="md:text-right">
-                            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-2">Advisory Roles</span>
-                            <div className="flex flex-wrap gap-2 md:justify-end">
+                        <div className="flex items-center gap-4">
+                            <span className="hidden sm:inline text-xs font-semibold text-gray-400 uppercase tracking-wider">Advisory</span>
+                            <div className="flex gap-2">
                                 {workStreams.slice(3).map((stream) => (
                                     <Link
                                         key={stream.id}
                                         href={`#${stream.id}`}
-                                        className="text-sm font-medium text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-full transition-colors"
+                                        className="whitespace-nowrap text-[13px] font-semibold text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 px-3.5 py-2 rounded-full transition-colors border border-gray-200"
                                     >
                                         {stream.title.split(' ')[0]} {stream.title.includes('AI') ? '& Automation' : ''}
                                     </Link>
@@ -230,45 +230,52 @@ export default function ServicesAndCapabilities() {
                 </div>
             </section>
 
+
             {/* Work Streams */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-20 sm:space-y-32">
                 {workStreams.map((stream, index) => (
-                    <section key={stream.id} id={stream.id} className="scroll-mt-48">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="p-3 bg-blue-600 text-white rounded-xl shadow-md">
-                                <stream.icon className="h-8 w-8" />
+                    <section key={stream.id} id={stream.id} className="scroll-mt-32 sm:scroll-mt-48">
+                        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-10 sm:mb-12 text-center sm:text-left">
+                            <div className="p-4 bg-blue-600 text-white rounded-2xl shadow-xl transform sm:-rotate-2">
+                                <stream.icon className="h-8 w-8 sm:h-10 sm:w-10" />
                             </div>
-                            <div>
-                                <h2 className="text-3xl font-bold text-gray-900">
+                            <div className="pt-2">
+                                <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 leading-tight">
                                     {stream.title}
                                 </h2>
                                 {stream.subtitle && (
-                                    <span className="text-lg text-gray-500 font-medium">{stream.subtitle}</span>
+                                    <span className="text-lg text-gray-400 font-medium block mt-1">{stream.subtitle}</span>
                                 )}
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 backdrop-blur-sm bg-white/30 rounded-3xl p-2 sm:p-0">
                             {/* Focus & Problems */}
-                            <div className="lg:col-span-1 space-y-8">
-                                <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
-                                    <h3 className="text-blue-900 font-semibold mb-3 flex items-center gap-2">
-                                        <Workflow className="h-5 w-5" /> Service Focus
+                            <div className="lg:col-span-5 space-y-8 sm:space-y-10">
+                                <div className="bg-blue-600 rounded-3xl p-8 sm:p-10 text-white shadow-2xl shadow-blue-200">
+                                    <h3 className="font-bold mb-4 flex items-center gap-3 text-lg">
+                                        <div className="p-1.5 bg-white/20 rounded-lg">
+                                            <Workflow className="h-5 w-5" />
+                                        </div>
+                                        Service Focus
                                     </h3>
-                                    <p className="text-blue-800 leading-relaxed">
-                                        {stream.focus}
+                                    <p className="text-blue-50 leading-relaxed text-lg italic">
+                                        &quot;{stream.focus}&quot;
                                     </p>
                                 </div>
 
-                                <div>
-                                    <h3 className="text-gray-900 font-bold mb-4 flex items-center gap-2">
-                                        <AlertCircle className="h-5 w-5 text-red-500" /> Typical Client Problems
+                                <div className="px-2 sm:px-4">
+                                    <h3 className="text-gray-900 font-bold mb-6 flex items-center gap-3 text-lg">
+                                        <div className="p-1.5 bg-red-50 text-red-500 rounded-lg">
+                                            <AlertCircle className="h-5 w-5" />
+                                        </div>
+                                        Critical Challenges
                                     </h3>
-                                    <ul className="space-y-3">
+                                    <ul className="grid grid-cols-1 gap-3">
                                         {stream.problems.map((problem, idx) => (
-                                            <li key={idx} className="flex items-start gap-3 text-gray-600 bg-gray-50 p-3 rounded-lg">
-                                                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-red-400 flex-shrink-0" />
-                                                <span className="text-sm">{problem}</span>
+                                            <li key={idx} className="flex items-start gap-3 text-gray-600 bg-gray-50/50 p-4 rounded-2xl border border-gray-100 hover:border-red-100 transition-colors">
+                                                <span className="mt-1.5 h-2 w-2 rounded-full bg-red-400 flex-shrink-0" />
+                                                <span className="text-[15px] leading-relaxed font-medium">{problem}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -276,85 +283,46 @@ export default function ServicesAndCapabilities() {
                             </div>
 
                             {/* Core Capabilities */}
-                            <div className="lg:col-span-2 space-y-8">
-                                <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="lg:col-span-7 space-y-8 sm:space-y-10">
+                                <div className="bg-white rounded-3xl border border-gray-100 p-8 sm:p-10 shadow-xl shadow-slate-100 h-full">
+                                    <div className="grid grid-cols-1 md:grid-cols-1 gap-12 sm:gap-16">
                                         <div>
-                                            <h3 className="text-gray-900 font-bold mb-6 flex items-center gap-2 text-lg border-b border-gray-100 pb-2">
-                                                <Zap className="h-5 w-5 text-blue-600" /> Core Capabilities
+                                            <h3 className="text-gray-900 font-bold mb-8 flex items-center gap-3 text-xl border-b border-gray-50 pb-4">
+                                                <div className="p-1.5 bg-blue-50 text-blue-600 rounded-lg">
+                                                    <Zap className="h-6 w-6" />
+                                                </div>
+                                                Core Capabilities
                                             </h3>
-                                            <ul className="space-y-3">
+                                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4">
                                                 {stream.capabilities.map((cap, idx) => (
-                                                    <li key={idx} className="flex items-start gap-3 text-gray-700">
-                                                        <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                                        <span>{cap}</span>
+                                                    <li key={idx} className="flex items-start gap-3 text-gray-700 group">
+                                                        <CheckCircle2 className="h-5 w-5 text-emerald-500 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                                                        <span className="text-[15px] leading-relaxed">{cap}</span>
                                                     </li>
                                                 ))}
                                             </ul>
                                         </div>
 
-                                        <div>
-                                            <h3 className="text-gray-900 font-bold mb-6 flex items-center gap-2 text-lg border-b border-gray-100 pb-2">
-                                                <ArrowDown className="h-5 w-5 text-gray-500" /> Engagement Outputs
+                                        <div className="bg-slate-50/50 rounded-2xl p-6 sm:p-8">
+                                            <h3 className="text-gray-900 font-bold mb-6 flex items-center gap-3 text-lg">
+                                                <div className="p-1.5 bg-gray-200 text-gray-600 rounded-lg">
+                                                    <ArrowDown className="h-5 w-5" />
+                                                </div>
+                                                Engagement Outputs
                                             </h3>
-                                            <ul className="space-y-3 mb-8">
+                                            <ul className="grid grid-cols-1 gap-3 mb-8">
                                                 {stream.outputs.map((output, idx) => (
-                                                    <li key={idx} className="flex items-start gap-3 text-gray-600">
-                                                        <div className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0" />
-                                                        <span>{output}</span>
+                                                    <li key={idx} className="flex items-center gap-3 text-gray-600">
+                                                        <div className="h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                                                        <span className="text-[15px] font-medium">{output}</span>
                                                     </li>
                                                 ))}
                                             </ul>
 
-                                            {stream.id === 'data-analytics' && (
+                                            {['data-analytics', 'process-optimization', 'agile-delivery', 'infrastructure-ops', 'tech-enablement', 'ai-automation'].includes(stream.id) && (
                                                 <Link
-                                                    href="/services-and-capabilities/data-analytics"
-                                                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group"
-                                                >
-                                                    View Delivery Model <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                                                </Link>
-                                            )}
-
-                                            {stream.id === 'process-optimization' && (
-                                                <Link
-                                                    href="/services-and-capabilities/process-optimization"
-                                                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group"
-                                                >
-                                                    View Delivery Model <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                                                </Link>
-                                            )}
-
-                                            {stream.id === 'agile-delivery' && (
-                                                <Link
-                                                    href="/services-and-capabilities/agile-delivery"
-                                                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group"
-                                                >
-                                                    View Delivery Model <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                                                </Link>
-                                            )}
-
-                                            {stream.id === 'infrastructure-ops' && (
-                                                <Link
-                                                    href="/services-and-capabilities/infrastructure-delivery"
-                                                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group"
-                                                >
-                                                    View Delivery Model <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                                                </Link>
-                                            )}
-
-                                            {stream.id === 'tech-enablement' && (
-                                                <Link
-                                                    href="/services-and-capabilities/technical-enablement"
-                                                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group"
-                                                >
-                                                    View Delivery Model <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                                                </Link>
-                                            )}
-
-                                            {stream.id === 'ai-automation' && (
-                                                <Link
-                                                    href="/services-and-capabilities/ai-automation"
-                                                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group"
+                                                    href={`/services-and-capabilities/${stream.id === 'infrastructure-ops' ? 'infrastructure-delivery' : stream.id === 'tech-enablement' ? 'technical-enablement' : stream.id}`}
+                                                    className="inline-flex items-center gap-3 px-6 py-3 bg-white border border-gray-200 rounded-xl text-sm font-bold text-blue-600 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all group shadow-sm"
                                                 >
                                                     View Delivery Model <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                                                 </Link>
@@ -366,11 +334,12 @@ export default function ServicesAndCapabilities() {
                         </div>
 
                         {index < workStreams.length - 1 && (
-                            <div className="mt-24 border-t border-gray-100" />
+                            <div className="mt-20 sm:mt-32 border-t border-gray-100 opacity-50" />
                         )}
                     </section>
                 ))}
             </div>
+
 
             {/* Industries Supported Section */}
             <section className="bg-gray-50 py-24 sm:py-32">

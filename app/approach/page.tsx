@@ -28,19 +28,21 @@ export default function Approach() {
     return (
         <div className="bg-white">
             {/* Header */}
-            <div className="bg-slate-900 py-24 text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Our Approach</h1>
-                <p className="mt-4 text-xl text-slate-300 max-w-3xl mx-auto px-4">
-                    Pragmatic. Execution-focused. We engage where clarity is needed most,
-                    lead through complexity, and ensure lasting results through enablement.
-                </p>
+            <div className="bg-slate-900 py-16 sm:py-24 text-center text-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h1 className="text-3xl font-black tracking-tight sm:text-5xl mb-6 leading-tight">Our Approach</h1>
+                    <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto px-2 sm:px-0 leading-relaxed font-medium">
+                        Pragmatic. Execution-focused. We engage where clarity is needed most,
+                        lead through complexity, and ensure lasting results through enablement.
+                    </p>
+                </div>
             </div>
 
             {/* Steps Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
                 <div className="relative">
-                    {/* Vertical Line for Desktop */}
-                    <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200" />
+                    {/* Vertical Line - Hidden on small, shown on MD+ */}
+                    <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-slate-100" />
 
                     <div className="space-y-16">
                         {steps.map((step, index) => (
@@ -76,19 +78,26 @@ export default function Approach() {
             </div>
 
             {/* Philosophy/Differentiator Section */}
-            <div className="bg-gray-50 py-24">
+            <div className="bg-slate-50 py-20 sm:py-32">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-8">Why We Are Different</h2>
-                    <p className="text-lg text-gray-600 leading-relaxed mb-10">
+                    <div className="inline-block px-4 py-2 bg-white border border-slate-200 rounded-full text-[11px] font-black uppercase tracking-widest text-slate-400 mb-8">
+                        The Professional Standard
+                    </div>
+                    <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-8 leading-tight">Why We Are Different</h2>
+                    <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-12 font-medium">
                         We reject the &quot;land and expand&quot; model. Our focus is on delivering value quickly
-                        and empowering your internal teams to take ownership. We believe that true success
+                        and empowering your internal teams to take ownership. True success
                         is defined by what happens after we leave.
                     </p>
-                    <Link href="/contact" className="text-blue-600 font-semibold hover:text-blue-500 transition-colors">
-                        Discuss your project <span aria-hidden="true">&rarr;</span>
+                    <Link
+                        href="/contact"
+                        className="inline-flex items-center justify-center w-full sm:w-auto gap-3 px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-black transition-all shadow-xl shadow-slate-200"
+                    >
+                        Discuss your project <span className="text-blue-400" aria-hidden="true">&rarr;</span>
                     </Link>
                 </div>
             </div>
+
         </div>
     );
 }

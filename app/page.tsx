@@ -1,208 +1,181 @@
+python3 - c "
+content = open('/dev/stdin').read()
+open('app/about/page.tsx', 'w').write(content)
+print('Done')
+" << 'EOF'
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-  Workflow,
-  Zap,
-  BarChart3,
-  Server,
-  Bot,
-  Terminal
-} from 'lucide-react';
+import { Linkedin, ExternalLink, ShieldCheck, GraduationCap, Award } from 'lucide-react';
 
-export default function Home() {
+export default function About() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-white pt-12 pb-16 sm:pt-24 sm:pb-32 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="flex justify-center mb-8 sm:mb-10">
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-slate-100 shadow-xl bg-[#E7E7E5] transition-transform hover:scale-105">
-                <Image
-                  src="/images/logo.png"
-                  alt="NexData Logo"
-                  fill
-                  className="object-cover scale-150"
-                  priority
-                />
-              </div>
+    <div className="bg-white font-sans">
+      <div className="bg-slate-900 py-16 sm:py-24 text-center text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-black tracking-tight sm:text-5xl mb-6">About NexData</h1>
+          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0 font-medium">
+            NexData is a systems-first consulting firm built by practitioners. We provide the operational clarity
+            and execution enablement needed to navigate complex, multi-stakeholder delivery environments.
+          </p>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          <div>
+            <div className="inline-block px-3.5 py-1.5 bg-blue-100 text-blue-700 rounded-full text-[11px] font-black uppercase tracking-widest border border-blue-200 mb-6">
+              Founder &amp; Principal
             </div>
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl mb-6 sm:mb-8 leading-[1.1]">
-              Turning Strategy Into <span className="text-blue-600">Execution</span>
-            </h1>
-            <p className="mt-4 sm:mt-6 text-lg sm:text-xl leading-relaxed text-gray-600 mb-8 sm:mb-10 max-w-2xl mx-auto">
-              We provide systems-first consulting and embedded delivery leadership to help organizations
-              achieve operational clarity and execution discipline in complex environments.
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4 leading-tight">
+              Artum Khorshid
+            </h2>
+            <p className="text-blue-600 font-bold text-lg mb-8">
+              Miami, FL &nbsp;/&nbsp; Washington, DC
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6">
+            <div className="prose prose-slate prose-lg max-w-none text-gray-600 leading-relaxed font-medium space-y-5">
+              <p>
+                NexData was founded on a simple principle: execution should be the deliverable, not the promise.
+                After years embedded in high-stakes federal modernization programs — coordinating 8-workstream
+                delivery teams, standing up governance frameworks from scratch, and serving as the on-site
+                execution authority across $21M–$665M portfolios — it became clear that most organizations
+                do not need more strategy. They need someone who can make it run.
+              </p>
+              <p>
+                That is what NexData does. We step into fragmented, high-pressure environments and build
+                the accountability structures, workflows, and reporting systems that restore delivery control
+                without disrupting what is already live.
+              </p>
+              <p>
+                Our clients range from federal agencies and enterprise IT programs to construction firms,
+                field-service operators, and growing small businesses. The environment changes. The discipline
+                does not.
+              </p>
+            </div>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link
-                href="/contact"
-                className="w-full sm:w-auto rounded-xl bg-blue-600 px-8 py-4 text-base sm:text-sm font-semibold text-white shadow-lg hover:bg-blue-500 hover:shadow-blue-200 transition-all text-center"
+                href="https://www.linkedin.com/in/artum-khorshid/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-[#0A66C2] text-white rounded-xl font-bold text-sm hover:bg-[#004182] transition-all shadow-md"
               >
-                Start a Conversation
+                <Linkedin className="h-4 w-4" />
+                Personal LinkedIn
               </Link>
-              <Link href="/contact" className="text-base sm:text-sm font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors py-2">
-                Contact Us <span aria-hidden="true">→</span>
+              <Link
+                href="https://www.linkedin.com/company/nexdata-consulting-llc/about/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-black transition-all shadow-md"
+              >
+                <ExternalLink className="h-4 w-4" />
+                NexData LinkedIn
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">What We Do</h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Focused support for critical business challenges.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Business Process Optimization",
-                description: "Eliminating friction and bottlenecks through structured workflow redesign and clear operational ownership.",
-                icon: Workflow
-              },
-              {
-                title: "Embedded Delivery Leadership",
-                description: "Hands-on coordination and execution discipline to stabilize complex cross-functional initiatives.",
-                icon: Zap
-              },
-              {
-                title: "Operational Visibility & Data",
-                description: "Turning raw delivery data into actionable insight through standardized KPIs and automated reporting systems.",
-                icon: BarChart3
-              },
-              {
-                title: "Infrastructure & IT Ops Support",
-                description: "Managing system deployments, operational readiness, and IT service management with technical precision.",
-                icon: Server
-              },
-              {
-                title: "Automation & AI Advisory",
-                description: "Identifying and prototyping practical, non-production automation to streamline repetitive operational tasks.",
-                icon: Bot
-              },
-              {
-                title: "Execution Enablement",
-                description: "Equipping teams with the tools, documentation, and processes needed to sustain results and reduce service reliance.",
-                icon: Terminal
-              }
-            ].map((service, index) => (
-              <div key={index} className="flex flex-col p-8 bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
-                <div className="h-12 w-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6">
-                  <service.icon className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed flex-grow">{service.description}</p>
+          <div className="space-y-8">
+            <div className="bg-slate-50 p-8 rounded-3xl border border-gray-100 shadow-xl shadow-slate-100/50">
+              <h3 className="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
+                <div className="h-6 w-1.5 bg-blue-600 rounded-full" />
+                Credentials &amp; Clearances
+              </h3>
+              <div className="mb-6">
+                <p className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                  <ShieldCheck className="h-3.5 w-3.5" /> Security Clearances
+                </p>
+                <ul className="space-y-2">
+                  {['DoD Secret Clearance', 'IRS 2S Moderate MBI'].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-gray-700 font-bold text-[15px]">
+                      <div className="h-2 w-2 rounded-full bg-blue-600 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
-          </div>
-          <div className="mt-12 flex flex-wrap justify-center gap-6">
-            <Link
-              href="/services-and-capabilities"
-              className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-500 transition-colors"
-            >
-              Services & Capabilities <span className="ml-2">→</span>
-            </Link>
-            <Link
-              href="/insights-and-engagements"
-              className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-500 transition-colors"
-            >
-              Insights & Engagements <span className="ml-2">→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Vision & Mission */}
-      <section className="py-16 sm:py-24 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16">
-            <div className="text-center lg:text-left">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Our Vision</h2>
-              <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                To build a lean, trusted consulting firm that helps organizations operate more effectively by
-                modernizing systems, empowering teams, and delivering measurable impact without
-                unnecessary complexity or overhead.
-              </p>
-            </div>
-            <div className="text-center lg:text-left">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Our Mission</h2>
-              <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                To help organizations deliver complex initiatives with clarity, discipline, and integrity.
-                Turning strategy into execution through pragmatic leadership, modern delivery practices,
-                and data driven decision making.
-              </p>
+              <div className="mb-6">
+                <p className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                  <GraduationCap className="h-3.5 w-3.5" /> Education
+                </p>
+                <ul className="space-y-2">
+                  {[
+                    'M.S., Data Analytics Engineering — George Mason University',
+                    'B.S., Political Science & Data Analytics — George Mason University',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-gray-700 font-bold text-[15px]">
+                      <div className="h-2 w-2 rounded-full bg-blue-600 flex-shrink-0 mt-1.5" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                  <Award className="h-3.5 w-3.5" /> Certifications
+                </p>
+                <ul className="space-y-2">
+                  {[
+                    'Certified Scrum Master (CSM)',
+                    'SAFe Advanced Scrum Master (SASM)',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-gray-700 font-bold text-[15px]">
+                      <div className="h-2 w-2 rounded-full bg-blue-600 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* How We Work */}
-      <section className="py-16 sm:py-24 bg-slate-900 text-white">
+      </div>
+      <div className="bg-slate-50 py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">How We Work</h2>
-            <p className="mt-4 text-lg sm:text-xl text-slate-400">
-              A pragmatic approach to sustainable results.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-8 lg:gap-12">
-            {[
-              {
-                step: "01",
-                title: "Assess & Align",
-                description: "Rapidly understand objectives, constraints, and risks to establish clear priorities and a realistic delivery plan."
-              },
-              {
-                step: "02",
-                title: "Lead & Execute",
-                description: "Provide hands-on leadership to stabilize delivery, improve coordination, and drive progress across teams."
-              },
-              {
-                step: "03",
-                title: "Enable & Transition",
-                description: "Transfer knowledge, document processes, and ensure teams are equipped to sustain results after engagement ends."
-              }
-            ].map((phase, index) => (
-              <div key={index} className="relative text-center sm:text-left">
-                <div className="text-4xl sm:text-5xl font-bold text-slate-700/50 mb-4">{phase.step}</div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 relative z-10">{phase.title}</h3>
-                <p className="text-slate-400 leading-relaxed relative z-10 text-base">
-                  {phase.description}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+            <div>
+              <div className="inline-block px-3.5 py-1.5 bg-blue-100 text-blue-700 rounded-full text-[11px] font-black uppercase tracking-widest border border-blue-200 mb-6">
+                Our Philosophy
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-8 leading-tight">Who We Are</h2>
+              <div className="prose prose-slate prose-lg max-w-none text-gray-600 leading-relaxed font-medium space-y-5">
+                <p>
+                  Founded on the belief that consulting should be about outcomes, not hours, NexData brings a
+                  pragmatic, disciplined approach to every engagement.
+                </p>
+                <p>
+                  We do not bring armies of junior staff to learn on your dime. Instead, we provide senior,
+                  hands-on leadership needed to stabilize delivery, optimize processes, and drive real progress.
+                </p>
+                <p>
+                  Whether you need to recover a failing program, modernize your infrastructure, or leverage
+                  data for better decision-making, we partner with you to get it done.
                 </p>
               </div>
-            ))}
+            </div>
+            <div className="bg-white p-8 sm:p-12 rounded-3xl border border-gray-100 shadow-2xl shadow-slate-100/50">
+              <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-8 sm:mb-10 flex items-center gap-3">
+                <div className="h-6 w-1.5 bg-blue-600 rounded-full" />
+                Core Differentiators
+              </h3>
+              <ul className="space-y-6">
+                {[
+                  'Senior, hands-on delivery leadership',
+                  'Focus on execution, not slideware',
+                  'Practical application of analytics and AI',
+                  'Clear outcomes and clean handoff',
+                  'Embedded in your environment, not advising from the outside',
+                  'Systems built to hold under stress',
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-4 sm:gap-5 group">
+                    <div className="mt-1 h-6 w-6 rounded-lg bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-blue-600 group-hover:border-blue-600 transition-colors">
+                      <div className="h-1.5 w-1.5 rounded-full bg-blue-600 group-hover:bg-white transition-colors" />
+                    </div>
+                    <span className="text-[17px] sm:text-lg text-gray-700 font-bold leading-tight pt-0.5">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 sm:py-24 bg-blue-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
-            Ready to Move Forward?
-          </h2>
-          <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto px-4 sm:px-0">
-            Interested in working together? Let’s start with a conversation and discuss how we can help
-            you deliver results.
-          </p>
-          <div className="px-4 sm:px-0">
-            <Link
-              href="/contact"
-              className="block sm:inline-block w-full sm:w-auto rounded-xl bg-white px-8 py-4 text-base font-semibold text-blue-600 shadow-xl hover:bg-blue-50 transition-all"
-            >
-              Contact NexData Consulting
-            </Link>
-          </div>
-        </div>
-      </section>
-
+      </div>
     </div>
   );
 }
+EOF
